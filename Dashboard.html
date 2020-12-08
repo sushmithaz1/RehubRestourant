@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Responsive Navbar with Searchbox</title> -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Income', 'Expenses'],
+          ['Jan',  1000,      400],
+          ['Feb',  1170,      460],
+          ['March',  660,       1120],
+          ['Apr',  1030,      540],
+          ['May',  660,      540],
+          ['June',  760,      540],
+          ['Jul',  350,      540],
+          ['Aug',  690,      540],
+          ['Sep',  875,      560],
+          ['Oct',  900,      450],
+          ['Nov',  950,      498],
+          ['Dec',  1030,      567]
+        ]);
+
+        var options = {
+          title: 'Income',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Opening Move', 'Percentage'],
+          ["4", 10],
+          ["5", 16],
+          ["6", 12],
+          ["7", 10],
+          ['8', 17],
+          ['9', 5],
+          ['10', 7],
+          ['11', 8],
+          ['12', 11],
+          ['13', 13],
+          ['14', 14],
+          ['15', 18],
+          ['16', 19],
+          ['17', 21],
+          ['18', 11],
+          ['19', 13],
+          ['20', 14],
+          ['21', 18],
+          ['22', 19],
+          ['23', 21],
+
+        ]);
+
+        var options = {
+        
+          width: 700,
+          legend: { position: 'none' },
+          
+          bars: 'vertical', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'bottom', label: 'Percentage'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
+
+
+
+  </head>
+  <body>
+      <div>
+            <span>Davur</span>
+            <div class="btn">
+              <span class="fas fa-bars"></span>
+            </div>
+        <nav1 class="sidebar">nav
+              <div class="text">
+        </div>
+        <ul>
+        <li class="active"><a href="#">Dashboard</a></li>
+       
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Menus</a></li>
+        <li><a href="#">Add new members</a></li>
+        <li><a href="#">General Customers</a></li>
+        <li><a href="#">Analytics</a></li>
+        <img src="Cook.jpg" height="80px" width="60px" style=" position: relative; right: -100px; top: 50px;">
+        <div class="cardBox" style="text-align:center;position:absolute;background-color: blue;border-radius: 10px;margin: 10px;padding: 30px;">
+          <span id="text" style="color: white;font-size: 10px;padding: 10px;margin-bottom: 10px;"> Organise your menus using button below</span><br><br>
+           <span id="text2" style="color: black;font-size: 13px;background-color: white; border-radius: 5px;padding: 10px;align-items: center;">+ Add Menus</span>
+       </div>
+        </ul>
+       
+        </nav1>
+
+        <script>
+            $('.btn').click(function(){
+              $(this).toggleClass("click");
+              $('.sidebar').toggleClass("show");
+            });
+              $('.feat-btn').click(function(){
+                $('nav ul .feat-show').toggleClass("show");
+                $('nav ul .first').toggleClass("rotate");
+              });
+              $('.serv-btn').click(function(){
+                $('nav ul .serv-show').toggleClass("show1");
+                $('nav ul .second').toggleClass("rotate");
+              });
+              $('nav ul li').click(function(){
+                $(this).addClass("active").siblings().removeClass("active");
+              });
+        </script>
+
+        
+    <nav>
+      <ul>
+        <li class="search-icon">
+            <input type="search" placeholder="Search Here">
+            <label class="icon">
+              <span class="fas fa-search"></span>
+            </label>
+          </li>
+            <li class="btn"><span class="fas fa-bars"></span></li>
+            <div class="items">
+            <li><a href="#"><p style="font-size: 15px;color: #000;">About</p></a></li>
+            <li><a href="#"><p style="font-size: 15px;color: #000;">Tools</p></a></li>
+            <li><a href="#"><p style="font-size: 15px;color: #000;">Help</p></a></li>
+            <li><div class="sym1"><i class="fa fa-bell" aria-hidden="true"></i></div></li>
+
+              <li><div class="sym2"><i class="fa fa-sticky-note" aria-hidden="true"></i></div></li>
+              <div id="round" style="color: black; font-size: 10px;position:relative;
+                background-color: crimson;border-radius:50%;height: fit-content;padding: 3px;right: 5px;top:5px;">2</div>
+                <li><div class="sym3"><i class="fa fa-gift" aria-hidden="true"></i></div></li>
+                <div id="round" style="color: black; font-size: 10px;position:relative;
+                background-color: crimson;border-radius:50%;height: fit-content;padding: 3px;right: 5px;top:5px;">2</div>
+                  <li><div class="sym4"><i class="fa fa-cog" aria-hidden="true"></i></div></li>
+        </div>
+        </ul>
+    </nav>
+
+</div>
+
+    <script>
+      $('nav ul li.btn span').click(function(){
+        $('nav ul div.items').toggleClass("show");
+        $('nav ul li.btn span').toggleClass("show");
+      });
+    </script>
+    <div class="bodyContent">
+      <div class="BigBody">
+    <div class="body">
+      Dashboard<br>
+      <span class="subtitle">welcome to Davur Admin</span>
+    </div>
+    
+    <div class="rightBody">
+      Filter Periode<br><i id="cal" class="fa fa-calendar" aria-hidden="true"></i>
+      <span class="subtitle">Date 4 jun 2020-jul 2020</span>
+    </div>
+     
+  </div>
+    <div class="cards">
+    <div class="card">
+      <div class="Csymbol">
+      <i class="fa fa-coffee" aria-hidden="true"></i>
+      </div>  
+     <div>   
+       <p id="num">56</p>
+       <p id="title">Total Menus</p>
+       
+       <p id="ROI">
+        4%(30days)</p>
+     </div>     
+    </div>
+
+    <div class="card">
+      <div class="Csymbol">
+        <i class="fa fa-sticky-note" aria-hidden="true"></i>
+      </div>  
+     <div>   
+       <p id="num">70</p>
+       <p id="title">Total Menus</p>
+       <p id="ROI">4%(30days)</p>
+     </div>     
+    </div>
+
+    <div class="card">
+      <div class="Csymbol">
+        <i class="fa fa-coffee" aria-hidden="true"></i>
+      </div>  
+     <div>   
+       <p id="num">56</p>
+       <p id="title">Total Menus</p>
+
+       <p id="ROI">4%(30days)</p>
+     </div>     
+    </div>
+
+    <div class="card">
+      <div class="Csymbol">
+        <i  class="fa fa-users" aria-hidden="true"></i>
+      </div>  
+     <div>   
+       <p id="num">126</p>
+       <p id="title">Total Menus</p>
+       <p id="ROI">4%(30days)</p>
+     </div>     
+    </div>
+    </div>
+
+    <div class="OrderBox">
+      <div class="OrderSum">
+        <div class="titles">
+        <div class="title">Orders Summary</div>
+        <div class="weeks">
+          <p>Montly</p>
+          <p>Weekly</p>
+          <p>Today</p>
+        </div>
+        </div>
+        <div class="newOrders">
+          <span id="num">50</span>
+          <span id="NewO">New Orders<i id="dot" class="fa fa-circle" aria-hidden="true"></i></span>
+       
+          <span id="Manage">Manage Orders<i id="right" class="fa fa-chevron-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="Ostatus">
+            <div>
+                <p class="num">25</p>
+                <p class="numStatus">On Delivery</p>
+            </div>
+            <div>
+              <p class="num">60</p>
+              <p class="numStatus">Delivered</p>
+            </div>
+            <div>
+              <p class="num">7</p>
+              <p class="numStatus">Cancelled</p>
+            </div>
+        </div>
+
+        <div class="columnright">
+          <div class="bars">
+              <div class="info">
+                  <span class="status">On Delivery</span>
+                  <span>90%</span>
+              </div>
+<div class="line html">
+</div>
+</div>
+<div class="bars">
+              <div class="info">
+                  <span id="status">Delivered</span>
+                  <span>60%</span>
+              </div>
+<div class="line css">
+</div>
+</div>
+<div class="bars">
+              <div class="info">
+                  <span id="status">Cancelled</span>
+                  <span>80%</span>
+              </div>
+<div class="line js">
+</div>
+</div>
+
+</div>
+
+      </div>
+      <div class="Revenue">
+          <div class="RevenueContent">
+            <div>
+              <p class="heading">Revenue</p>
+              <p class="subHead">Loreum ipsum</p>
+            </div>
+            <div  name="options">
+              <select>
+                <option value="monthly"><p style="color: black;">Monthly</p></option>
+                <option value="weekly"><p  style="color: black;">Weekly</p></option>
+                <option value="today"><p style="color: black;">Today</p></option>
+              </select>
+            </div>         
+          </div>
+          <div>
+            <div id="curve_chart" style="width: 500px; height: 300px"></div>         
+          </div>
+        </div>
+        
+    </div>
+
+    <div class="CustomerMap">
+      <div >
+      <div class="titles">
+        <div class="title">custemer Map</div>
+        <div class="weeks">
+          <p>Montly</p>
+          <p>Weekly</p>
+          <p>Today</p>
+        </div>
+      </div>
+        <div>
+          <div id="top_x_div" style="width: 700px; height: 250px;"></div>
+        </div>
+      
+        </div>
+        <div class="box">
+          <i id="fas" class="fa fa-bars" aria-hidden="true"></i><br>
+          <span id="text">
+            Manage <br>
+            Dashboard Layout
+          </span><br>
+          <span id="Subtext">Loreum est temporibus omnis.
+          </span>
+          <i id="fa" class="fa fa-arrow-right" aria-hidden="true"></i>
+        </div>
+    </div>
+  </div>
+  </body>
+</html>
